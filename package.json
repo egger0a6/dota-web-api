@@ -1,0 +1,44 @@
+{
+  "name": "dota-web-api",
+  "version": "1.0.0",
+  "description": "NodeJS Wrapper for the DotA 2 Web API",
+  "main": "./lib/index.js",
+  "files": [
+    "/lib/api.js",
+    "/lib/index.js"
+  ],
+  "scripts": {
+    "build": "babel src -d lib",
+    "clean": "rm -rf lib package",
+    "publish-preview": "npm pack && tar -xvzf *.tgz && rm -rf *.tgz",
+    "test": "babel src test -d lib && mocha ./lib/api.test"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egger0a6/dota-web-api.git"
+  },
+  "keywords": [
+    "dota",
+    "dota2",
+    "web",
+    "api"
+  ],
+  "author": "Clifford Phan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/egger0a6/dota-web-api/issues"
+  },
+  "homepage": "https://github.com/egger0a6/dota-web-api#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.12.5",
+    "node-fetch": "^2.6.1"
+  }
+}
